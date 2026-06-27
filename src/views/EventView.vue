@@ -2,11 +2,11 @@
 import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAppStore } from '../stores/app'
-import { ArrowLeft, Utensils, Coffee, Home, Handshake, Plus, Edit, Trash2 } from 'lucide-vue-next'
+import { ArrowLeft, Utensils, Handshake, Plus, Edit, Trash2 } from 'lucide-vue-next'
 import LogPaymentModal from '../components/LogPaymentModal.vue'
 import AddExpenseModal from '../components/AddExpenseModal.vue'
 import { calculateSettlements } from '../utils/settlement'
-import type { Event, Expense } from '../types'
+import type { Expense } from '../types'
 
 
 const isAddExpenseOpen = ref(false)
