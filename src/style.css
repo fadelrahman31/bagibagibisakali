@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add our custom Jago-inspired theme colors here later */
+:root {
+  --color-primary: #7B1D3A; /* Maroon */
+  --color-accent: #F97316;  /* Orange */
+}
