@@ -467,6 +467,28 @@ function saveExpense() {
     </button>
   </div>
   <p class="text-sm text-gray-500">Tap to edit names/prices, tap participants to assign</p>
+        <!-- Paid By Selector -->
+      <div class="space-y-2 bg-orange-50 p-3 rounded-xl border border-orange-100">
+        <label class="block text-sm font-bold text-gray-700">Who paid for this?</label>
+        <div class="flex gap-3 overflow-x-auto pb-1">
+          <button 
+            v-for="p in event.participants" 
+            :key="p.id"
+            @click="payerId = p.id"
+            class="flex flex-col items-center gap-1 min-w-[60px]"
+          >
+            <div 
+              class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shadow-sm transition-all relative"
+              :class="payerId === p.id ? 'ring-2 ring-offset-2 ring-[#F97316] scale-105' : 'opacity-60'"
+              :style="{ backgroundColor: p.color }"
+            >
+              {{ p.name.charAt(0).toUpperCase() }}
+              <Check v-if="payerId === p.id" class="w-4 h-4 absolute text-white bg-[#F97316] rounded-full p-0.5 -top-1 -right-1" />
+            </div>
+            <span class="text-xs font-medium text-gray-700 truncate w-full text-center">{{ p.name }}</span>
+          </button>
+        </div>
+      </div>
   
   <div class="space-y-3">
     <div 
